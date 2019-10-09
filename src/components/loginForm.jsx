@@ -30,7 +30,7 @@ class LoginForm extends Form {
     } catch (ex) {
       if (ex.response.status === 400) {
         const errors = { ...this.state.errors };
-        errors.username = ex.response.data;
+        errors.username = ex.response.data.message;
         this.setState({ errors });
       }
     }
